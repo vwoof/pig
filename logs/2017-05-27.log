@@ -1,0 +1,589 @@
+[2017-05-27 17:37:01][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:37:58][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:38:29][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:39:30][debug] 
+[2017-05-27 17:42:46][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:44:34][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:44:52][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:45:28][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:46:02][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:47:04][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:47:11][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:47:43][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:48:36][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:48:39][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:48:41][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:49:04][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:50:35][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:51:08][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 17:59:18][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 18:01:36][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 18:02:58][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 18:03:47][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 18:07:05][debug] <!DOCTYPE html> <html lang="en"> <head> <title>ThinkCMF-跳转提示</title> <meta name="author" content="ThinkCMF"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit"> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp"/> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link rel="icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/themes/simplebootx_video/Public/assets/images/favicon.ico" type="image/x-icon"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> <link href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"> <link href="/themes/simplebootx_video/Public/css/amazeui.min.css"  rel="stylesheet" type="text/css"> <script type="text/javascript" src="/themes/simplebootx_video/Public/assets/js/iscroll.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.min.js"></script> <script type="text/javasceipt" src="/themes/simplebootx_video/Public/js/jquery.lazyload.js"></script> <!--[if IE 7]> <link rel="stylesheet" href="/themes/simplebootx_video/Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css"> <![endif]--> <link href="/themes/simplebootx_video/Public/assets/css/style.css" rel="stylesheet"> <style>
+		/*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+		#backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+		#backtotop:hover{color:#333}
+		#main-menu-user li.user{display: none}
+	</style> <script type="text/javascript">
+	var myScroll;
+
+	function loaded() {
+		myScroll = new IScroll('#wrapper', {
+			eventPassthrough : true,
+			scrollX : true,
+			scrollY : false,
+			preventDefault : false
+		});
+	}
+	</script> <style type="text/css">		*{ padding: 0; margin: 0; }
+		body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16px; }
+		.system-message{ padding: 24px 48px;text-align: center; }
+		.system-message h1{ font-size: 100px; font-weight: normal; line-height: 120px; margin-bottom: 12px; text-align: center;}
+		.system-message .jump{ padding-top: 10px}
+		.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
+		.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+		</style> </head> <body class="body-white"> <div class="navbar navbar-fixed-top"> <div class="navbar-inner"> <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="/"><img src="/themes/simplebootx_video/Public/assets/images/logo.png"/></a> <div class="nav-collapse collapse" id="main-menu"> <ul id="main-menu"  class="nav"><li   class='li-class'   id= 'menu-item-3'><a href='/index.php?m=list&a=index&id=3' target=''>关注</a></li><li   class='li-class'   id= 'menu-item-4'><a href='/index.php?m=list&a=index&id=4' target=''>热门</a></li><li   class='li-class'   id= 'menu-item-5'><a href='/index.php?m=list&a=index&id=5' target=''>最新</a></li><li   class='li-class'   id= 'menu-item-6'><a href='/index.php?m=list&a=index&id=6' target=''>大秀</a></li></ul> <ul class="nav pull-right" id="main-menu-user"> <!-- <li class="user login" style="margin-left: 5px;"> <a class="dropdown-toggle user notifactions" href="/index.php?g=use[2017-05-27 18:07:15][debug] 返回:<!DOCTYPE html>
+<html>
+    <head>
+        <title>无法找到资源。</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>“/”应用程序中的服务器错误。<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>无法找到资源。</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> 说明: </b>HTTP 404。您正在查找的资源(或者它的一个依赖项)可能已被移除，或其名称已更改，或暂时不可用。请检查以下 URL 并确保其拼写正确。
+            <br><br>
+
+            <b> 请求的 URL: </b>/WxGzhSubmit.aspx<br><br>
+
+    </body>
+</html>
+
+[2017-05-27 18:16:14][debug] 返回:<!DOCTYPE html>
+<html>
+    <head>
+        <title>无法找到资源。</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>“/”应用程序中的服务器错误。<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>无法找到资源。</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> 说明: </b>HTTP 404。您正在查找的资源(或者它的一个依赖项)可能已被移除，或其名称已更改，或暂时不可用。请检查以下 URL 并确保其拼写正确。
+            <br><br>
+
+            <b> 请求的 URL: </b>/WxGzhSubmit.aspx<br><br>
+
+    </body>
+</html>
+

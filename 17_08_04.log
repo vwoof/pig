@@ -1,0 +1,12 @@
+[ 2017-08-04T21:28:54+08:00 ] ::1 /qqonline_ex/index.php?g=admin&m=public&a=login
+ERR: SQLSTATE[HY000] [2006] MySQL server has gone away
+
+[ 2017-08-04T21:30:18+08:00 ] ::1 /qqonline_ex/index.php?g=admin&m=public&a=login
+ERR: SQLSTATE[HY000] [2006] MySQL server has gone away
+
+[ 2017-08-04T21:30:21+08:00 ] ::1 /qqonline_ex/index.php?g=admin&m=public&a=login
+ERR: SQLSTATE[HY000] [2006] MySQL server has gone away
+
+[ 2017-08-04T21:30:51+08:00 ] ::1 /qqonline_ex/index.php?g=admin&m=public&a=login
+ERR: SQLSTATE[HY000] [1049] Unknown database 'ssc'
+
